@@ -1,0 +1,9 @@
+.cards {
+  border: solid 5px black 
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

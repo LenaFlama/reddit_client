@@ -1,6 +1,8 @@
+import React from 'react';
 import './App.css';
 import Header from './feautures/header/header';
 import Cards from './components/Cards/cards';
+
 
 function App() {
   return (
@@ -8,9 +10,7 @@ function App() {
       <header className="App-header">
         <Header/>
       </header>
-      <body>
         <Cards/>
-      </body>
     </div>
   );
 }
