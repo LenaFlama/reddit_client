@@ -4,10 +4,11 @@ import New from "./new/new";
 import Popular from "./popular/popular";
 import Search from "./search/search";
 import Categories from "./categories/categories";
+import './header.css'
 
 export default function Header () {
   return(
-    <div>
+    <div className="header">
       <Home/>
       <Search/>
       <New></New>

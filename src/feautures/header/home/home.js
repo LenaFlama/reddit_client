@@ -1,7 +1,10 @@
 import React from "react";
+import Cards from "../../../components/Cards/cards";
 
 export default function Home () {
   return (
-    <div>Home</div>
+    <div>
+      <a href={<Cards></Cards>}>Home</a>
+    </div>
   )
 }
