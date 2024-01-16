@@ -1,4 +1,3 @@
-import react from "react";
 import Home from "./home/home";
 import New from "./new/new";
 import Popular from "./popular/popular";

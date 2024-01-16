@@ -1,4 +1,3 @@
-import React from "react";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { API_ROOT } from "../../app/api";
 
@@ -29,7 +28,9 @@ const cardsSlice = createSlice({
     hasError: false,
     defaultSubreddit: '/r/pics'
   },
-  reducers: {},
+  reducers: {updateDefaultSubreddit: (state, action) => {
+    state.defaultSubreddit = action.payload;
+  }},
   extraReducers: (builder) => {
     builder
       .addCase(fetchCard.pending, (state) => {
@@ -52,4 +53,5 @@ const cardsSlice = createSlice({
 export default cardsSlice.reducer;
 export const selectCards = (state) => state.cards.cards;
 export const selectDefaultSubreddit = (state) => state.cards.defaultSubreddit;
+export const { updateDefaultSubreddit } = cardsSlice.actions;
 

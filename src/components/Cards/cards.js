@@ -9,10 +9,11 @@ import Vote from "../../feautures/bar/vote/vote";
 export default function Cards () {
   const cards = useSelector(selectCards);
   const dispatch = useDispatch();
-  const defaultSubreddit = useSelector(selectDefaultSubreddit)
-  const [openComments, setOpenComments] = useState({})
+  const defaultSubreddit = useSelector(selectDefaultSubreddit);
  
 
+  const [openComments, setOpenComments] = useState({})
+ 
   useEffect(()=> {
     dispatch(fetchCard(defaultSubreddit)); 
   }, [dispatch, defaultSubreddit]);
@@ -25,8 +26,6 @@ export default function Cards () {
       }
     });
   }, [openComments, dispatch]);
-
-
 
   const handleToggleComments = (permalink) => {
     setOpenComments((prevOpenComments) => ({
@@ -43,12 +42,15 @@ export default function Cards () {
             <li id='title'>{card.title}</li>
             <li id='details-author'>{card.author}</li>
             <li id='details-time'>{new Date(card.created*1000).toLocaleString()}</li>
-            <li id='image'><img src={card.thumbnail} alt='Not available'/></li>
+            {card.thumbnail == 'self'?'':
+              (<li id='image'><img src={card.thumbnail} alt='Not available'/>
+              </li>)
+              }
             <li id='bar-upsNb'>{(card.score/1000).toFixed(1)+'k'}</li>
             <li><Vote></Vote></li>
             <li id='bar-comments'>
               <button onClick={() => handleToggleComments(card.permalink)}>
-                {openComments[card.permalink] ? 'Hide Comments' : 'Show Comments'}
+                {openComments[card.permalink] ? 'Hide Comments' : card.num_comments}
               </button>
               {openComments[card.permalink] && <Comments/>}
             </li>
