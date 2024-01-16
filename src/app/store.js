@@ -5,6 +5,6 @@ import commentsSliceReducer from "../feautures/bar/comments/commentsSlice";
 export const store = configureStore({
   reducer: {
     cards: cardSliceReducer,
-    comments: commentsSliceReducer
+    comments: commentsSliceReducer,
   },
 });

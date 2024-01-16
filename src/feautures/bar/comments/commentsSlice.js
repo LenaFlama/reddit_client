@@ -38,7 +38,7 @@ const commentsSlice = createSlice({
         state.hasError = false;
         state.comments = action.payload
       })
-      .addCase(fetchComments.rejected, (state, action) => {
+      .addCase(fetchComments.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
       })
