@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCard, selectCards, selectDefaultSubreddit } from "./cardSlice";
-import './cards.css'
+import {
+  fetchCards,
+  selectCards,
+  selectDefaultSubreddit,
+  selectSearchTerm,
+} from "./cardSlice";
+import "./cards.css";
 import { fetchComments } from "../../feautures/bar/comments/commentsSlice";
 import Comments from "../../feautures/bar/comments/comments";
 import Vote from "../../feautures/bar/vote/vote";
 
-export default function Cards () {
+export default function Cards() {
   const cards = useSelector(selectCards);
   const dispatch = useDispatch();
   const defaultSubreddit = useSelector(selectDefaultSubreddit);
- 
+  const searchTerm = useSelector(selectSearchTerm);
 
-  const [openComments, setOpenComments] = useState({})
- 
-  useEffect(()=> {
-    dispatch(fetchCard(defaultSubreddit)); 
-  }, [dispatch, defaultSubreddit]);
+  const [openComments, setOpenComments] = useState({});
+
+  useEffect(() => {
+    console.log(defaultSubreddit);
+    dispatch(fetchCards({ subreddit: defaultSubreddit, searchTerm }));
+  }, [dispatch, defaultSubreddit, searchTerm]);
 
   useEffect(() => {
     // Fetch comments when openComments changes
-    Object.keys(openComments).map(permalink => {
+    Object.keys(openComments).map((permalink) => {
       if (openComments[permalink]) {
         dispatch(fetchComments(permalink));
       }
@@ -35,27 +41,37 @@ export default function Cards () {
   };
 
   return (
-    <div >
+    <div>
       {cards.map((card) => (
-        <div className="card" key={card.id}>
+        <div className='card' key={card.id}>
           <ul>
             <li id='title'>{card.title}</li>
             <li id='details-author'>{card.author}</li>
-            <li id='details-time'>{new Date(card.created*1000).toLocaleString()}</li>
-            {card.thumbnail == 'self'?'':
-              (<li id='image'><img src={card.thumbnail} alt='Not available'/>
-              </li>)
-              }
-            <li id='bar-upsNb'>{(card.score/1000).toFixed(1)+'k'}</li>
-            <li><Vote></Vote></li>
+            <li id='details-time'>
+              {new Date(card.created * 1000).toLocaleString()}
+            </li>
+            {card.thumbnail === "self" ? (
+              ""
+            ) : (
+              <li id='image'>
+                <img src={card.thumbnail} alt='Not available' />
+              </li>
+            )}
+            <li id='bar-upsNb'>{(card.score / 1000).toFixed(1) + "k"}</li>
+            <li>
+              <Vote></Vote>
+            </li>
             <li id='bar-comments'>
               <button onClick={() => handleToggleComments(card.permalink)}>
-                {openComments[card.permalink] ? 'Hide Comments' : card.num_comments}
+                {openComments[card.permalink]
+                  ? "Hide Comments"
+                  : card.num_comments}
               </button>
-              {openComments[card.permalink] && <Comments/>}
+              {openComments[card.permalink] && <Comments />}
             </li>
           </ul>
-        </div>))}
+        </div>
+      ))}
     </div>
-  )
+  );
 }

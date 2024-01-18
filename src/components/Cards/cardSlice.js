@@ -1,57 +1,74 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { API_ROOT } from "../../app/api";
 
-export const fetchCard = createAsyncThunk('posts/fetchPost',
-  async (subreddit) => {
-    console.log(subreddit)
+export const fetchCards = createAsyncThunk("cards/fetchCards",
+  async ({subreddit, searchTerm}) => {
+    console.log(subreddit);
+    console.log(searchTerm);
     try {
-      const response = await fetch(`${API_ROOT}${subreddit}.json`);
-      console.log(`${API_ROOT}${subreddit}.json`)
-      let data = await response.json();
-      const posts = data.data.children.map(child => child.data);
+      let url
+      if(searchTerm) {
+        console.log('o intrat aici')
+        url = await fetch((`${API_ROOT}${subreddit}.json?q=${searchTerm}`))
+      } else {
+        console.log('o intrat dincoace')
+        console.log(subreddit);
+        console.log(`${API_ROOT}`)
+        url = await fetch(`${API_ROOT}${subreddit}.json`);
+      }
+      console.log(`${API_ROOT}${subreddit}.json`);
+      let data = await url.json();
+      const cards = data.data.children.map((child) => child.data);
       return {
-        posts,
+        cards,
         subreddit,
+        searchTerm,
       };
     } catch (error) {
-      console.error('Error fetching posts:', error);
-      throw error
+      console.error("Error fetching posts:", error);
+      throw error;
     }
-    
-  })
+  }
+);
 
 const cardsSlice = createSlice({
-  name: 'cards',
+  name: "cards",
   initialState: {
     cards: [],
     isLoading: false,
     hasError: false,
-    defaultSubreddit: '/r/pics'
+    defaultSubreddit: "/r/pics",
+    searchTerm:'',
   },
-  reducers: {updateDefaultSubreddit: (state, action) => {
-    state.defaultSubreddit = action.payload;
-  }},
+  reducers: {
+    updateDefaultSubreddit: (state, action) => {
+      state.defaultSubreddit = action.payload;
+    },
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload
+    },
+  },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCard.pending, (state) => {
+      .addCase(fetchCards.pending, (state) => {
         state.isLoading = true;
         state.hasError = false;
       })
-      .addCase(fetchCard.fulfilled, (state, action) => {
+      .addCase(fetchCards.fulfilled, (state, action) => {
         state.isLoading = false;
         state.hasError = false;
-        state.cards = action.payload.posts
+        state.cards = action.payload.cards;
         state.defaultSubreddit = action.payload.subreddit;
       })
-      .addCase(fetchCard.rejected, (state, action) => {
+      .addCase(fetchCards.rejected, (state) => {
         state.isLoading = false;
         state.hasError = true;
-      })
-  }
-})
+      });
+  },
+});
 
 export default cardsSlice.reducer;
 export const selectCards = (state) => state.cards.cards;
 export const selectDefaultSubreddit = (state) => state.cards.defaultSubreddit;
-export const { updateDefaultSubreddit } = cardsSlice.actions;
-
+export const selectSearchTerm = (state) => state.cards.searchTerm;
+export const { updateDefaultSubreddit, setSearchTerm, clearSearchTerm } = cardsSlice.actions;
