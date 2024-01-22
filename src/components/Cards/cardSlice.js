@@ -3,20 +3,13 @@ import { API_ROOT } from "../../app/api";
 
 export const fetchCards = createAsyncThunk("cards/fetchCards",
   async ({subreddit, searchTerm}) => {
-    console.log(subreddit);
-    console.log(searchTerm);
     try {
       let url
       if(searchTerm) {
-        console.log('o intrat aici')
         url = await fetch((`${API_ROOT}${subreddit}.json?q=${searchTerm}`))
       } else {
-        console.log('o intrat dincoace')
-        console.log(subreddit);
-        console.log(`${API_ROOT}`)
         url = await fetch(`${API_ROOT}${subreddit}.json`);
       }
-      console.log(`${API_ROOT}${subreddit}.json`);
       let data = await url.json();
       const cards = data.data.children.map((child) => child.data);
       return {

@@ -10,6 +10,7 @@ import "./cards.css";
 import { fetchComments } from "../../feautures/bar/comments/commentsSlice";
 import Comments from "../../feautures/bar/comments/comments";
 import Vote from "../../feautures/bar/vote/vote";
+import Markdown from "react-markdown";
 
 export default function Cards() {
   const cards = useSelector(selectCards);
@@ -20,7 +21,6 @@ export default function Cards() {
   const [openComments, setOpenComments] = useState({});
 
   useEffect(() => {
-    console.log(defaultSubreddit);
     dispatch(fetchCards({ subreddit: defaultSubreddit, searchTerm }));
   }, [dispatch, defaultSubreddit, searchTerm]);
 
@@ -50,13 +50,20 @@ export default function Cards() {
             <li id='details-time'>
               {new Date(card.created * 1000).toLocaleString()}
             </li>
-            {card.thumbnail === "self" ? (
-              ""
-            ) : (
-              <li id='image'>
-                <img src={card.thumbnail} alt='Not available' />
+            
+            {card.post_hint === "image" || card.is_gallery?(
+              <li><img src={card.thumbnail} alt='Not available' /></li>
+            ): card.post_hint === "hosted:video"? (
+              <li>
+                <video controls autoPlay>
+                  <source src={card.media.reddit_video.scrubber_media_url}/>
+                </video>
               </li>
-            )}
+            ):card.post_hint === "self" || card.thumbnail === 'self'? (
+              <li><p><Markdown>{card.selftext}</Markdown></p></li>
+            ):card.post_hint === 'link'? (
+              <a href={card.url}><img src={card.thumbnail} alt='Not available' /></a>
+            ):!card.post_hint}
             <li id='bar-upsNb'>{(card.score / 1000).toFixed(1) + "k"}</li>
             <li>
               <Vote></Vote>

@@ -4,11 +4,8 @@ import { API_ROOT } from "../../../app/api";
 export const fetchComments = createAsyncThunk(
   "comments/fetchComments",
   async (permalink) => {
-    console.log(permalink);
-    console.log(`${API_ROOT}${permalink}.json`);
     try {
       const response = await fetch(`${API_ROOT}${permalink}.json`);
-      console.log(`${API_ROOT}${permalink}.json`);
       let data = await response.json();
       const comments = data[1].data.children.map((child) => child.data);
       return comments;
