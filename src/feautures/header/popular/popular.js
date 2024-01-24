@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../components/Cards/cardSlice";
 
 export default function Popular() {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    handleChangeSubredditToPopular();
+  });
 
   const handleChangeSubredditToPopular = () => {
     dispatch(updateDefaultSubreddit("/r/popular/"));
@@ -11,7 +15,6 @@ export default function Popular() {
 
   return (
     <div>
-      <button onClick={handleChangeSubredditToPopular}>Popular</button>
     </div>
   );
 }

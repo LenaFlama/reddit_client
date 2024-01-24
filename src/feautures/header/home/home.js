@@ -1,12 +1,22 @@
 import React from "react";
-import Cards from "../../../components/Cards/cards";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { updateDefaultSubreddit } from "../../../components/Cards/cardSlice";
+
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    handleChangeSubredditToHome();
+  });
+
+  const handleChangeSubredditToHome = () => {
+    dispatch(updateDefaultSubreddit("/r/pics/"));
+  };
+
   return (
     <div>
-      <a href={<Cards></Cards>}>
-        <button>Home</button>
-      </a>
     </div>
   );
 }

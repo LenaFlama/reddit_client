@@ -1,9 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../components/Cards/cardSlice";
+import { useEffect } from "react";
 
 export default function New() {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    handleChangeSubredditToNew();
+  });
 
   const handleChangeSubredditToNew = () => {
     dispatch(updateDefaultSubreddit("/new"));
@@ -11,7 +16,6 @@ export default function New() {
 
   return (
     <div>
-      <button onClick={handleChangeSubredditToNew}>New</button>
     </div>
   );
 }

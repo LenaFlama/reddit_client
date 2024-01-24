@@ -1,41 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { updateDefaultSubreddit } from "../../../components/Cards/cardSlice";
+import { NavLink } from "react-router-dom";
 
 export default function Categories () {
-  
-  const dispatch = useDispatch();
-  
-  const handleChangeSubredditToGames = () => {
-    dispatch(updateDefaultSubreddit("/r/gaming"));
-  };
-
-  const handleChangeSubredditToAnime = () => {
-    dispatch(updateDefaultSubreddit("/r/anime"));
-  };
-
-  const handleChangeSubredditToFunny = () => {
-    dispatch(updateDefaultSubreddit("/r/funny"));
-  };
-
-  const handleChangeSubredditToMovies = () => {
-    dispatch(updateDefaultSubreddit("/r/movies"));
-  };
-
-  const handleChangeSubredditToMusic = () => {
-    dispatch(updateDefaultSubreddit("/r/metal"));
-  };
-
-
   return (
     <div>
       <p>Categories</p>
       <ul>
-        <li onClick={handleChangeSubredditToGames}>Games</li>
-        <li onClick={handleChangeSubredditToAnime}>Anime</li>
-        <li onClick={handleChangeSubredditToFunny}>Funny</li>
-        <li onClick={handleChangeSubredditToMovies}>Movies</li>
-        <li onClick={handleChangeSubredditToMusic}>Music</li>
+        <li><NavLink to='/categories/games'>Games</NavLink></li>
+        <li><NavLink to='/categories/anime'>Anime</NavLink></li>
+        <li><NavLink to='/categories/funny'>Funny</NavLink></li>
+        <li><NavLink to='/categories/movies'>Movies</NavLink></li>
+        <li><NavLink to='/categories/music'>Music</NavLink></li>
       </ul>
     </div>
   )

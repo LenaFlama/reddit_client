@@ -60,7 +60,7 @@ export default function Cards() {
                 </video>
               </li>
             ):card.post_hint === "self" || card.thumbnail === 'self'? (
-              <li><p><Markdown>{card.selftext}</Markdown></p></li>
+              <li><Markdown>{card.selftext}</Markdown></li>
             ):card.post_hint === 'link'? (
               <a href={card.url}><img src={card.thumbnail} alt='Not available' /></a>
             ):!card.post_hint}
