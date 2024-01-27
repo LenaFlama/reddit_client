@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import {
-  updateDefaultSubreddit,
-  setSearchTerm,
-} from "../../../components/Cards/cardSlice";
+import { setSearchTerm, updateDefaultSubreddit } from "../../../Cards/cardSlice";
 import { useNavigate, createSearchParams } from "react-router-dom";
+import './search.css'
+
 
 export default function Search() {
   const [term, setTerm] = useState("");
@@ -35,7 +34,7 @@ export default function Search() {
   };
 
   return (
-    <div>
+    <div className="search">
       <input
         id=''
         type='text'
@@ -44,7 +43,7 @@ export default function Search() {
         ref={searchInputRef}
         onChange={search}
       ></input>
-      <button onClick={handleSearch}>Search</button>
+      <button className='material-symbols-outlined' onClick={handleSearch}>Search</button>
     </div>
   );
 }

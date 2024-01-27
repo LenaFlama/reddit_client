@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { API_ROOT } from "../../app/api";
 
-export const fetchCards = createAsyncThunk("cards/fetchCards",
-  async ({subreddit, searchTerm}) => {
+export const fetchCards = createAsyncThunk(
+  "cards/fetchCards",
+  async ({ subreddit, searchTerm }) => {
     try {
-      let url
-      if(searchTerm) {
-        url = await fetch((`${API_ROOT}${subreddit}.json?q=${searchTerm}`))
+      let url;
+      if (searchTerm) {
+        url = await fetch(`${API_ROOT}${subreddit}.json?q=${searchTerm}`);
       } else {
         url = await fetch(`${API_ROOT}${subreddit}.json`);
       }
@@ -30,15 +31,15 @@ const cardsSlice = createSlice({
     cards: [],
     isLoading: false,
     hasError: false,
-    defaultSubreddit: "/r/pics",
-    searchTerm:'',
+    defaultSubreddit: "",
+    searchTerm: "",
   },
   reducers: {
     updateDefaultSubreddit: (state, action) => {
       state.defaultSubreddit = action.payload;
     },
     setSearchTerm: (state, action) => {
-      state.searchTerm = action.payload
+      state.searchTerm = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -64,4 +65,5 @@ export default cardsSlice.reducer;
 export const selectCards = (state) => state.cards.cards;
 export const selectDefaultSubreddit = (state) => state.cards.defaultSubreddit;
 export const selectSearchTerm = (state) => state.cards.searchTerm;
-export const { updateDefaultSubreddit, setSearchTerm, clearSearchTerm } = cardsSlice.actions;
+export const { updateDefaultSubreddit, setSearchTerm, clearSearchTerm } =
+  cardsSlice.actions;

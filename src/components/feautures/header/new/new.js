@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { updateDefaultSubreddit } from "../../../components/Cards/cardSlice";
+import { updateDefaultSubreddit } from "../../../Cards/cardSlice";
 import { useEffect } from "react";
 
 export default function New() {

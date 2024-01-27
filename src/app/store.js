@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cardSliceReducer from "../components/Cards/cardSlice";
-import commentsSliceReducer from "../feautures/bar/comments/commentsSlice";
+import commentsSliceReducer from "../components/feautures/bar/comments/commentsSlice";
 
 export const store = configureStore({
   reducer: {

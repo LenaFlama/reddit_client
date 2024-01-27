@@ -1,0 +1,10 @@
+.search {
+  height: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+
+input {
+  height: 24px;
+}

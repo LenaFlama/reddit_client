@@ -1,0 +1,29 @@
+.header_list {
+  position: fixed;
+  font-size: 2em;
+  font-family: "Mulish", sans-serif;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 1em;
+  color: rgba(39, 38, 38, 0.829)
+}
+
+.header a {
+  text-decoration: none;
+  color: rgba(80, 79, 79, 0.877);
+}
+
+.header a:hover {
+  color: rgba(0, 0, 0, 0.247);
+}
+
+.header a.active {
+  color: rgba(109, 25, 5, 0.733);
+}
+
+.home {
+  font-size: 2.5em;
+}
+

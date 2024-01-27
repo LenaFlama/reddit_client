@@ -7,9 +7,9 @@ import {
   selectSearchTerm,
 } from "./cardSlice";
 import "./cards.css";
-import { fetchComments } from "../../feautures/bar/comments/commentsSlice";
-import Comments from "../../feautures/bar/comments/comments";
-import Vote from "../../feautures/bar/vote/vote";
+import { fetchComments } from "../feautures/bar/comments/commentsSlice";
+import Comments from "../feautures/bar/comments/comments";
+import Vote from "../feautures/bar/vote/vote";
 import Markdown from "react-markdown";
 
 export default function Cards() {
@@ -41,29 +41,39 @@ export default function Cards() {
   };
 
   return (
-    <div>
+    <div className='cards'>
       {cards.map((card) => (
         <div className='card' key={card.id}>
           <ul>
             <li id='title'>{card.title}</li>
-            <li id='details-author'>{card.author}</li>
-            <li id='details-time'>
-              {new Date(card.created * 1000).toLocaleString()}
-            </li>
-            
-            {card.post_hint === "image" || card.is_gallery?(
-              <li><img src={card.thumbnail} alt='Not available' /></li>
-            ): card.post_hint === "hosted:video"? (
-              <li>
+            <ul className='details'>
+              <li id='author'>{card.author}</li>
+              <li className='details' id='time'>
+                {new Date(card.created * 1000).toLocaleString()}
+              </li>
+            </ul>
+            {card.post_hint === "image" || card.is_gallery ? (
+              <li className="media-image">
+                <img src={card.url} alt='Not available' />
+              </li>
+            ) : card.post_hint === "hosted:video" ? (
+              <li className="media-video">
                 <video controls autoPlay>
-                  <source src={card.media.reddit_video.scrubber_media_url}/>
+                  <source src={card.media.reddit_video.scrubber_media_url} />
                 </video>
               </li>
-            ):card.post_hint === "self" || card.thumbnail === 'self'? (
-              <li><Markdown>{card.selftext}</Markdown></li>
-            ):card.post_hint === 'link'? (
-              <a href={card.url}><img src={card.thumbnail} alt='Not available' /></a>
-            ):!card.post_hint}
+              
+            ) : card.post_hint === "self" || card.thumbnail === "self" ? (
+              <li className="media-text">
+                <Markdown>{card.selftext}</Markdown>
+              </li>
+            ) : card.post_hint === "link" ? (
+              <a className="media-link" href={card.url}>
+                <img src={card.thumbnail} alt='Not available' />
+              </a>
+            ) : (
+              !card.post_hint
+            )}
             <li id='bar-upsNb'>{(card.score / 1000).toFixed(1) + "k"}</li>
             <li>
               <Vote></Vote>

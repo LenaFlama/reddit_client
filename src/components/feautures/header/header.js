@@ -5,18 +5,14 @@ import { Outlet, NavLink } from "react-router-dom";
 
 export default function Header() {
 
-
-
   return (
-    <div className='header'>
-      <ul>
-        <li><NavLink to='/home'>Home</NavLink></li>
+      <ul className="header_list">
+        <li className="material-symbols-outlined"><NavLink className='home' to='/home'>Home</NavLink></li>
         <li><Search /></li>
         <li><NavLink to='/new'>New</NavLink></li>
         <li><NavLink to='/popular'>Popular</NavLink></li>
         <li><Categories/></li>
         <Outlet></Outlet>
       </ul>
-    </div>
   );
 }

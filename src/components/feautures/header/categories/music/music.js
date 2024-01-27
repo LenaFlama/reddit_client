@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateDefaultSubreddit } from "../../../../components/Cards/cardSlice";
+import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
 
 export default function Music () {
   const dispatch = useDispatch();

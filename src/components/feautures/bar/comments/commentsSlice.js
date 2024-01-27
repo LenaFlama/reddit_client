@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { API_ROOT } from "../../../app/api";
+import { API_ROOT } from "../../../../app/api";
 
 export const fetchComments = createAsyncThunk(
   "comments/fetchComments",

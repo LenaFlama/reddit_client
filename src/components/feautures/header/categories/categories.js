@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 export default function Categories () {
   return (
     <div>
-      <p>Categories</p>
+      <p>Categories:</p>
       <ul>
         <li><NavLink to='/categories/games'>Games</NavLink></li>
         <li><NavLink to='/categories/anime'>Anime</NavLink></li>

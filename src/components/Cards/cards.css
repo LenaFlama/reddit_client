@@ -1,9 +1,42 @@
 .cards {
-  border: solid 5px black 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  font-family: 'Mulish', sans-serif;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+.card {
+  border: solid 3px rgba(201, 201, 201, 0.308);
+  margin-bottom: 0.3em;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.card #title {
+  font-weight: 600;
+  font-size: larger;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: smaller;
+}
+
+li.media-image {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+img {
+  max-width: 50em;
+  max-height: 50em;
 }
