@@ -11,6 +11,8 @@ export default function Search() {
   const searchInputRef = useRef();
   const navigate = useNavigate();
 
+
+
   const search = (e) => {
     setTerm(e.currentTarget.value);
 
@@ -22,6 +24,8 @@ export default function Search() {
     navigate({search: `?${queryString}` });
   };
 
+   
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (term.length === 0) {
@@ -32,18 +36,23 @@ export default function Search() {
     dispatch(setSearchTerm(term));
     setTerm("");
   };
-
+const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch(e);
+    }
+  };
   return (
     <div className="search">
       <input
-        id=''
-        type='text'
+        className="input"
+        type='search'
         value={term}
         placeholder='Search'
         ref={searchInputRef}
         onChange={search}
+        onKeyDown={handleKeyDown}
       ></input>
-      <button className='material-symbols-outlined' onClick={handleSearch}>Search</button>
+      <span className='material-symbols-outlined' onClick={handleSearch}>Search</span>
     </div>
   );
 }

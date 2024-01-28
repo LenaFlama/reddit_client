@@ -29,15 +29,15 @@ export default function Vote() {
   };
   return (
     <div>
-      <button
-        className={`bar ${greenColor}`}
+      <span
+        className={`material-symbols-outlined ${greenColor}`}
         onClick={handleChangingColorGreen}
       >
-        Up
-      </button>
-      <button className={`bar ${redColor}`} onClick={handleChangingColorRed}>
-        DOWN
-      </button>
+        thumb_up
+      </span>
+      <span className={`material-symbols-outlined ${redColor}`} onClick={handleChangingColorRed}>
+        thumb_down
+      </span>
     </div>
   );
 }

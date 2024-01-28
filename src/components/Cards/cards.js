@@ -53,38 +53,44 @@ export default function Cards() {
               </li>
             </ul>
             {card.post_hint === "image" || card.is_gallery ? (
-              <li className="media-image">
+              <li className='hint' id='image'>
                 <img src={card.url} alt='Not available' />
               </li>
             ) : card.post_hint === "hosted:video" ? (
-              <li className="media-video">
+              <li className='hint' id='video'>
                 <video controls autoPlay>
-                  <source src={card.media.reddit_video.scrubber_media_url} />
+                  <source src={card.media.reddit_video.fallback_url} />
                 </video>
               </li>
-              
             ) : card.post_hint === "self" || card.thumbnail === "self" ? (
-              <li className="media-text">
+              <p className='hint' id='text'>
                 <Markdown>{card.selftext}</Markdown>
-              </li>
+              </p>
             ) : card.post_hint === "link" ? (
-              <a className="media-link" href={card.url}>
+              <a className='hint' id='link' href={card.url}>
                 <img src={card.thumbnail} alt='Not available' />
               </a>
             ) : (
               !card.post_hint
             )}
-            <li id='bar-upsNb'>{(card.score / 1000).toFixed(1) + "k"}</li>
-            <li>
+            <div className='bar-votes'>
               <Vote></Vote>
-            </li>
-            <li id='bar-comments'>
-              <button onClick={() => handleToggleComments(card.permalink)}>
-                {openComments[card.permalink]
-                  ? "Hide Comments"
-                  : card.num_comments}
-              </button>
-              {openComments[card.permalink] && <Comments />}
+              <div className='likes'><span class='material-symbols-outlined favorite'>settings_heart</span>
+              <p id='upsNb'>{(card.score / 1000).toFixed(1) + "k"}</p></div>
+              
+            </div>
+            <li>
+              <div
+                className='bar-comments'
+                onClick={() => handleToggleComments(card.permalink)}
+              >
+                {openComments[card.permalink] ? (
+                  <span className='comments-hide'>Hide Comments</span>
+                ) : (
+                  <span className='comments-number'>{card.num_comments}</span>
+                )}
+              </div>
+              <span>{openComments[card.permalink] && <Comments />}</span>
             </li>
           </ul>
         </div>

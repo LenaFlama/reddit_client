@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectComments } from "./commentsSlice";
 import Markdown from "react-markdown";
+import "./comments.css";
 
 export default function Comments() {
   const comments = useSelector(selectComments);
@@ -10,14 +11,28 @@ export default function Comments() {
     return (
       <div>
         {replies.map((reply, index) => (
-          <div key={index}>
-            <details>
+          <div className='child-comment-box'>
+            <p className='comment details child'>
+              <span>{reply.data.author} </span>
+              <div className='likes'>
+                <span class='material-symbols-outlined favorite'>settings_heart</span>
+
+                <span>{reply.data.score}</span>
+              </div>
+            </p>
+            <Markdown
+              className='comment-body child'
+              children={reply.data.body}
+            ></Markdown>
+            <details key={index}>
               <summary>
-                <p>
-                  <span>{reply.data.author} </span>
-                  <span>{reply.data.score}</span>
-                </p>
-                <Markdown children={reply.data.body}></Markdown>
+                {reply.replies === "" ? (
+                  ""
+                ) : (
+                  <span class='material-symbols-outlined comment child'>
+                    expand_more
+                  </span>
+                )}
               </summary>
               {reply.data && reply.data.replies
                 ? getReplies(reply.data.replies.data.children)
@@ -30,16 +45,29 @@ export default function Comments() {
   };
 
   return (
-    <div>
+    <div className='comments-box'>
       {comments.map((comment) => (
-        <div className='comment' key={comment.id}>
-          <details>
+        <div className='parent-comment-box'>
+          <p className='comment details parent'>
+            <span>{comment.author} </span>
+            <div className='likes'>
+              <span class='material-symbols-outlined favorite'>settings_heart</span>
+              <span>{comment.score}</span>
+            </div>
+          </p>
+          <Markdown
+            className='comment-body parent'
+            children={comment.body}
+          ></Markdown>
+          <details key={comment.id}>
             <summary>
-              <p className='comment_details'>
-                <span>{comment.author} </span>
-                <span>{comment.score}</span>
-              </p>
-              <Markdown children={comment.body}></Markdown>
+              {comment.replies === "" ? (
+                ""
+              ) : (
+                <span class='material-symbols-outlined comment parent'>
+                  expand_more
+                </span>
+              )}
             </summary>
             {comment.replies ? getReplies(comment.replies.data.children) : ""}
           </details>

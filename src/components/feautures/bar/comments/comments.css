@@ -1,0 +1,43 @@
+.comment.details {
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.171);
+  margin-right: 1em;
+  font-weight: 600;
+}
+
+
+
+summary {
+  list-style: none;
+}
+
+.parent-comment-box {
+  border: 2px solid rgb(255, 255, 255);
+  padding: 0.5em;
+  padding-left: 1em;
+  border-radius: 0.5em;
+  background-color: rgba(0, 0, 0, 0.171);
+}
+
+.material-symbols-outlined.comment {
+  font-size: 1.2em;
+}
+
+.material-symbols-outlined.favorite {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.child-comment-box {
+  border-left: 2px solid rgba(0, 0, 0, 0.062);
+  border-top: 2px solid rgba(0, 0, 0, 0.062);
+  padding-left: 1em;
+  border-radius: 0.5em;
+  background-color: rgba(255, 255, 255, 0.459);
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  padding-right: 0.5em;
+}
+

@@ -1,7 +1,12 @@
 .redColor {
-  background-color: red;
+  color: red;
 }
 
 .greenColor {
-  background-color: green;
+  color: rgb(0, 255, 106);
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+  margin-right: 0.3em;
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   flex-wrap: wrap;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 ul {
@@ -22,15 +22,17 @@ ul {
   font-weight: 600;
   font-size: larger;
   border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  color: rgba(39, 38, 38, 0.829);
 }
 
 .details {
   display: flex;
   justify-content: space-between;
   font-size: smaller;
+  color: rgba(80, 79, 79, 0.877);
 }
 
-li.media-image {
+li.hint {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -39,4 +41,51 @@ li.media-image {
 img {
   max-width: 50em;
   max-height: 50em;
+}
+
+video {
+  max-width: 50em;
+  max-height: 50em;
+}
+
+.bar-votes {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.171);
+  margin-top: 0.2em;
+  color: rgba(80, 79, 79, 0.877);
+}
+
+#upsNb {
+  justify-content: center;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.bar-comments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.171);
+  border: 2px solid rgba(207, 199, 199, 0.034);
+  border-radius: 0.5em;
+  color: rgba(80, 79, 79, 0.877);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.comments-number {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  height: 1.5em;
+}
+
+.comments-hide {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  height: 1.8em;
 }

@@ -3,8 +3,22 @@
   display: flex;
   flex-wrap: wrap;
   align-content: space-around;
+  align-items: flex-end;
 }
 
 input {
-  height: 24px;
+  appearance: none;
+  border: unset;
+  border-bottom: 3px solid rgba(80, 79, 79, 0.877);
+  padding: unset;
+  margin: unset;
+  background: unset;
+}
+
+input:focus {
+  appearance: none;
+  border: unset;
+  padding: unset;
+  margin: unset;
+  background: unset;
 }
