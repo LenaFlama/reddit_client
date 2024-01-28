@@ -12,14 +12,14 @@ export default function Comments() {
       <div>
         {replies.map((reply, index) => (
           <div className='child-comment-box'>
-            <p className='comment details child'>
+            <div className='comment details child'>
               <span>{reply.data.author} </span>
               <div className='likes'>
                 <span class='material-symbols-outlined favorite'>settings_heart</span>
 
                 <span>{reply.data.score}</span>
               </div>
-            </p>
+            </div>
             <Markdown
               className='comment-body child'
               children={reply.data.body}
@@ -48,13 +48,13 @@ export default function Comments() {
     <div className='comments-box'>
       {comments.map((comment) => (
         <div className='parent-comment-box'>
-          <p className='comment details parent'>
+          <div className='comment details parent'>
             <span>{comment.author} </span>
             <div className='likes'>
               <span class='material-symbols-outlined favorite'>settings_heart</span>
               <span>{comment.score}</span>
             </div>
-          </p>
+          </div>
           <Markdown
             className='comment-body parent'
             children={comment.body}

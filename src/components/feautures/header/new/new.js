@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../Cards/cardSlice";
 import { useEffect } from "react";
 
+
 export default function New() {
   const dispatch = useDispatch();
 

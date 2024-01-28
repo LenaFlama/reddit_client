@@ -6,7 +6,17 @@
   color: rgb(0, 255, 106);
 }
 
-.material-symbols-outlined {
+.votes {
+  display: flex;
+  align-items: center;
+}
+
+.material-symbols-outlined.thumb {
   cursor: pointer;
   margin-right: 0.3em;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 670px) {
+
 }

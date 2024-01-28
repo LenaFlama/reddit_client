@@ -1,34 +1,62 @@
 .header_list {
   position: fixed;
-  font-size: 2em;
+  font-size: 1.3vw;
   font-family: "Mulish", sans-serif;
   text-decoration: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: column;
   margin-top: 1em;
-  color: rgba(39, 38, 38, 0.829)
 }
 
 .header a {
   text-decoration: none;
-  color: rgba(80, 79, 79, 0.877);
+  color: #e7e7e7be;
 }
 
 .header a:hover {
-  color: rgba(0, 0, 0, 0.247);
+  color: rgba(112, 78, 69, 0.788);
 }
 
 .header a.active {
-  color: rgba(109, 25, 5, 0.733);
+  color: rgba(112, 78, 69, 0.788);
+}
+
+.material-symbols-outlined:hover {
+  color: rgba(112, 78, 69, 0.788);
 }
 
 .home {
-  font-size: 2.5em;
+  font-size: 2vw;
 }
 
-button.material-symbols-outlined {
-  color: rgba(39, 38, 38, 0.829);
+.material-symbols-outlined.home {
+  color: rgba(247, 247, 247, 0.829);
 }
 
+.material-symbols-outlined.popular {
+  font-size: 2vw;
+  display: none;
+}
 
+.material-symbols-outlined.new {
+  font-size: 2vw;
+  display: none;
+}
+
+@media only screen and (max-width: 550px) {
+  .material-symbols-outlined.popular {
+    color: #e7e7e7be;
+    display: flex;
+  }
+  .popular-name {
+    display: none;
+  }
+  .material-symbols-outlined.new {
+    color: #e7e7e7be;
+    display: flex;
+  }
+  .new-name {
+    display: none;
+  }
+}

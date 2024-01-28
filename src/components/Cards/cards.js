@@ -63,19 +63,20 @@ export default function Cards() {
                 </video>
               </li>
             ) : card.post_hint === "self" || card.thumbnail === "self" ? (
-              <p className='hint' id='text'>
+              <span className='hint' id='text'>
                 <Markdown>{card.selftext}</Markdown>
-              </p>
+              </span>
             ) : card.post_hint === "link" ? (
               <a className='hint' id='link' href={card.url}>
                 <img src={card.thumbnail} alt='Not available' />
               </a>
             ) : (
               !card.post_hint
+            
             )}
             <div className='bar-votes'>
               <Vote></Vote>
-              <div className='likes'><span class='material-symbols-outlined favorite'>settings_heart</span>
+              <div className='likes'><span className='material-symbols-outlined favorite'>settings_heart</span>
               <p id='upsNb'>{(card.score / 1000).toFixed(1) + "k"}</p></div>
               
             </div>

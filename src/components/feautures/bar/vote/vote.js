@@ -28,14 +28,14 @@ export default function Vote() {
     }
   };
   return (
-    <div>
+    <div className="votes">
       <span
-        className={`material-symbols-outlined ${greenColor}`}
+        className={`material-symbols-outlined thumb ${greenColor}`}
         onClick={handleChangingColorGreen}
       >
         thumb_up
       </span>
-      <span className={`material-symbols-outlined ${redColor}`} onClick={handleChangingColorRed}>
+      <span className={`material-symbols-outlined thumb ${redColor}`} onClick={handleChangingColorRed}>
         thumb_down
       </span>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../Cards/cardSlice";
 
+
 export default function Popular() {
   const dispatch = useDispatch();
 
