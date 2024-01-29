@@ -26,10 +26,10 @@ export default function Cards() {
 
   useEffect(() => {
     // Fetch comments when openComments changes
-    Object.keys(openComments).map((permalink) => {
+    Object.keys(openComments).forEach((permalink) => {
       if (openComments[permalink]) {
         dispatch(fetchComments(permalink));
-      }
+      } 
     });
   }, [openComments, dispatch]);
 
