@@ -18,3 +18,8 @@ body {
   display: flex;
 }
 
+@media only screen and (max-width: 650px) {
+  .header {
+    width: 5vw;
+  }
+}

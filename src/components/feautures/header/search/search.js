@@ -49,9 +49,18 @@ export default function Search() {
         onChange={search}
         onKeyDown={handleKeyDown}
       ></input>
-      <span className='material-symbols-outlined search' onClick={handleSearch}>
-        Search
-      </span>
+      <details className='search-sign'>
+        <summary className='material-symbols-outlined search'>Search</summary>
+        <input
+          className='option-box-search'
+          type='search'
+          value={term}
+          placeholder='Search'
+          ref={searchInputRef}
+          onChange={search}
+          onKeyDown={handleKeyDown}
+        ></input>
+      </details>
     </div>
   );
 }

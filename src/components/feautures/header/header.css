@@ -44,7 +44,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
   .material-symbols-outlined.popular {
     color: #e7e7e7be;
     display: flex;

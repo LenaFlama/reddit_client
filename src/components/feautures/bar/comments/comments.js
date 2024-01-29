@@ -16,7 +16,6 @@ export default function Comments() {
               <span>{reply.data.author} </span>
               <div className='likes'>
                 <span class='material-symbols-outlined favorite'>settings_heart</span>
-
                 <span>{reply.data.score}</span>
               </div>
             </div>
@@ -51,7 +50,7 @@ export default function Comments() {
           <div className='comment details parent'>
             <span>{comment.author} </span>
             <div className='likes'>
-              <span class='material-symbols-outlined favorite'>settings_heart</span>
+              <span className='material-symbols-outlined favorite'>settings_heart</span>
               <span>{comment.score}</span>
             </div>
           </div>
