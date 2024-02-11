@@ -77,7 +77,7 @@ export default function Cards() {
             <div className='bar-votes'>
               <Vote></Vote>
               <div className='likes'><span className='material-symbols-outlined favorite'>settings_heart</span>
-              <p id='upsNb'>{(card.score / 1000).toFixed(1) + "k"}</p></div>
+              <span id='upsNb'>{(card.score / 1000).toFixed(1) + "k"}</span></div>
               
             </div>
             <li>
@@ -86,9 +86,9 @@ export default function Cards() {
                 onClick={() => handleToggleComments(card.permalink)}
               >
                 {openComments[card.permalink] ? (
-                  <span className='comments-hide'>Hide Comments</span>
+                  <p className='comments-hide'>Hide Comments</p>
                 ) : (
-                  <span className='comments-number'>{card.num_comments}</span>
+                  <p className='comments-number'>{card.num_comments}</p>
                 )}
               </div>
               <span>{openComments[card.permalink] && <Comments />}</span>

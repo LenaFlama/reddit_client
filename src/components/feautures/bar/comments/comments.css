@@ -9,12 +9,11 @@ summary {
 }
 
 .parent-comment-box {
-  border: 2px solid rgb(255, 255, 255);
+  border: .05vw solid #87869e;
   padding: 0.5em;
   padding-left: 1em;
   border-radius: 0.5em;
-  background-color: rgba(167, 167, 167, 0.363);
-  border: .1vw solid rgba(173, 172, 172, 0.514);
+  background-color: #002c8415;
   margin-top: .5vw;
   font-size: .7vw;
 }
@@ -24,28 +23,33 @@ summary {
 }
 
 .material-symbols-outlined.comment {
-  font-size: .6vw;;
-  color: rgba(80, 79, 79, 0.877);
+  font-size: 1vw;;
   cursor: pointer;
 }
 
 .material-symbols-outlined.favorite {
   font-size: 1vw;;
   font-weight: 600;
-  color: rgba(80, 79, 79, 0.877);
 }
 
 .child-comment-box {
-  border-left: 2px solid rgba(167, 167, 167, 0.164);
-  border-top: 2px solid rgba(167, 167, 167, 0.164);
+  border-left: .05vw solid #87869e;
+  border-top: .01vw solid #87869e;
   padding-left: 1em;
   border-radius: 0.5em;
   background-color: rgba(255, 255, 255, 0.459);
   margin-top: .2em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
 }
 
 .likes {
   display: flex;
   align-items: center;
   padding-right: 0.5em;
+}
+
+span p {
+  color: #001236;
+  text-shadow: none;
 }

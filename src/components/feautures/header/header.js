@@ -8,22 +8,23 @@ export default function Header() {
     <ul className='header_list'>
       <li className='material-symbols-outlined'>
         <NavLink className='home' to='/home'>
-          Home
+          <p>Home</p>
         </NavLink>
       </li>
       <li>
-        <Search />
+        <p><Search /></p>
       </li>
-      <li >
+      <li>
         <NavLink to='/new'>
-        <span className='new-name'>New</span>
-        <span className="material-symbols-outlined new">hotel_class</span>
+          <p className='new-name'>New</p>
+          <span className='material-symbols-outlined new'>hotel_class</span>
         </NavLink>
       </li>
       <li>
         <NavLink to='/popular'>
-        <span className='popular-name'>Popular</span>
-        <span className="material-symbols-outlined popular">groups</span></NavLink>
+          <p className='popular-name'>Popular</p>
+          <span className='material-symbols-outlined popular'>groups</span>
+        </NavLink>
       </li>
       <li>
         <Categories />

@@ -32,7 +32,6 @@ export default function Search() {
 
     dispatch(updateDefaultSubreddit("/search"));
     dispatch(setSearchTerm(term));
-    setTerm("");
   };
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {

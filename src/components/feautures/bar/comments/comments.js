@@ -15,14 +15,18 @@ export default function Comments() {
             <div className='comment details child'>
               <span>{reply.data.author} </span>
               <div className='likes'>
-                <span class='material-symbols-outlined favorite'>settings_heart</span>
+                <span class='material-symbols-outlined favorite'>
+                  settings_heart
+                </span>
                 <span>{reply.data.score}</span>
               </div>
             </div>
-            <Markdown
-              className='comment-body child'
-              children={reply.data.body}
-            ></Markdown>
+            <span>
+              <Markdown
+                className='comment-body child'
+                children={reply.data.body}
+              ></Markdown>
+            </span>
             <details key={index}>
               <summary>
                 {reply.replies === "" ? (
@@ -50,20 +54,24 @@ export default function Comments() {
           <div className='comment details parent'>
             <span>{comment.author} </span>
             <div className='likes'>
-              <span className='material-symbols-outlined favorite'>settings_heart</span>
+              <span className='material-symbols-outlined favorite'>
+                settings_heart
+              </span>
               <span>{comment.score}</span>
             </div>
           </div>
-          <Markdown
-            className='comment-body parent'
-            children={comment.body}
-          ></Markdown>
+          <span>
+            <Markdown
+              className='comment-body parent'
+              children={comment.body}
+            ></Markdown>
+          </span>
           <details key={comment.id}>
             <summary>
               {comment.replies === "" ? (
                 ""
               ) : (
-                <span class='material-symbols-outlined comment parent'>
+                <span class='material-symbols-outlined comment'>
                   expand_more
                 </span>
               )}

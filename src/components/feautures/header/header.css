@@ -11,19 +11,6 @@
 
 .header a {
   text-decoration: none;
-  color: #e7e7e7be;
-}
-
-.header a:hover {
-  color: rgba(112, 78, 69, 0.788);
-}
-
-.header a.active {
-  color: rgba(112, 78, 69, 0.788);
-}
-
-.material-symbols-outlined:hover {
-  color: rgba(112, 78, 69, 0.788);
 }
 
 .home {
@@ -60,3 +47,4 @@
     display: none;
   }
 }
+

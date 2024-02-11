@@ -9,19 +9,29 @@ export default function Categories() {
         <span className='categories-title'>Categories:</span>
         <ul>
           <li>
-            <NavLink to='/categories/games'>Games</NavLink>
+            
+              <NavLink to='/categories/games'><p>Games</p></NavLink>
+            
           </li>
           <li>
-            <NavLink to='/categories/anime'>Anime</NavLink>
+            
+              <NavLink to='/categories/anime'><p>Anime</p></NavLink>
+            
           </li>
           <li>
-            <NavLink to='/categories/funny'>Funny</NavLink>
+            
+              <NavLink to='/categories/funny'><p>Funny</p></NavLink>
+            
           </li>
           <li>
-            <NavLink to='/categories/movies'>Movies</NavLink>
+            
+              <NavLink to='/categories/movies'><p>Movies</p></NavLink>
+            
           </li>
           <li>
-            <NavLink to='/categories/music'>Music</NavLink>
+            
+              <NavLink to='/categories/music'><p>Music</p></NavLink>
+            
           </li>
         </ul>
       </div>
@@ -30,31 +40,29 @@ export default function Categories() {
           <summary className='material-symbols-outlined categories'>
             menu_open
           </summary>
-          <ul className="option-box">
+          <ul className='option-box'>
             <li>
-              <NavLink to='/categories/games'>
-                Games
-              </NavLink>
+              <p>
+                <NavLink to='/categories/games'>Games</NavLink>
+              </p>
             </li>
             <li>
-              <NavLink to='/categories/anime'>
-                Anime
-              </NavLink>
+              <p>
+                <NavLink to='/categories/anime'>Anime</NavLink>
+              </p>
             </li>
             <li>
-              <NavLink to='/categories/funny'>
-                Funny
-              </NavLink>
+              <p>
+                <NavLink to='/categories/funny'>Funny</NavLink>
+              </p>
             </li>
             <li>
-              <NavLink to='/categories/movies'>
-                Movies
-              </NavLink>
+              <p>
+                <NavLink to='/categories/movies'>Movies</NavLink>
+              </p>
             </li>
             <li>
-              <NavLink to='/categories/music'>
-                Music
-              </NavLink>
+              <NavLink to='/categories/music'>Music</NavLink>
             </li>
           </ul>
         </details>
