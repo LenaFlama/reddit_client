@@ -5,23 +5,28 @@ html {
 
 .header {
   display: flex;
-  width: 10vw;
+  width: 10%;
   justify-content: center;
   background-color:#001236;
   border-right: .01vw solid #CCCAF2;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 1vw;
+  border-radius: 1.2vw;
+  height: 96%;
+  position: fixed;
+  left: 17%;
+  box-shadow: -32px 22px 43px -5px rgba(0, 0, 0, 0.33)
 }
 
 .main {
   display: flex;
-  width: 100%;
+  width: 50%;
   margin-top: 1vw;
-  margin-left: 1.5vw;
-  margin-right: 1.5vw;
   color: #001236;
-}
+  position: absolute;
+  right: 20%;
 
-body {
-  display: flex;
 }
 
 @media only screen and (max-width: 650px) {

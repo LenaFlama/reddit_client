@@ -10,6 +10,7 @@ ul {
   border-radius: 1.2vw;
   padding: 1vw;
   height: auto;
+  box-shadow: -32px 22px 43px -16px rgba(0, 0, 0, 0.19)
 }
 
 .card #title {

@@ -1,3 +1,4 @@
+import React from "react";
 import Search from "./search/search";
 import Categories from "./categories/categories";
 import "./header.css";
