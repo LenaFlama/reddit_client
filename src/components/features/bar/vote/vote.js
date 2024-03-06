@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./vote.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Vote() {
   //simple colored button that remember my choice without authentification
@@ -28,14 +29,14 @@ export default function Vote() {
     }
   };
   return (
-    <div className="votes">
+    <div className="container d-flex ps-0">
       <span
-        className={`material-symbols-outlined thumb ${greenColor}`}
+        className={`material-symbols-outlined thumb ${greenColor} `}
         onClick={handleChangingColorGreen}
       >
         thumb_up
       </span>
-      <span className={`material-symbols-outlined thumb ${redColor}`} onClick={handleChangingColorRed}>
+      <span className={`material-symbols-outlined thumb ${redColor} `} onClick={handleChangingColorRed}>
         thumb_down
       </span>
     </div>

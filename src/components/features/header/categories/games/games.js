@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
 
-export default function Music () {
+export default function Games () {
   const dispatch = useDispatch();
 
-  const handleChangeSubredditToMusic = () => {
-    dispatch(updateDefaultSubreddit("/r/metal"));
+  const handleChangeSubredditToGames = () => {
+    dispatch(updateDefaultSubreddit("r/gaming"));
   };
 
   useEffect(() => {
-    handleChangeSubredditToMusic();
+    handleChangeSubredditToGames();
   });
 
   return(

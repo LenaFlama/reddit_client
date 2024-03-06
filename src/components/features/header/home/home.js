@@ -1,18 +1,19 @@
 import React from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../Cards/cardSlice";
-import { useEffect } from "react";
 
 
-export default function New() {
+
+export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    handleChangeSubredditToNew();
+    handleChangeSubredditToHome();
   });
 
-  const handleChangeSubredditToNew = () => {
-    dispatch(updateDefaultSubreddit("/new"));
+  const handleChangeSubredditToHome = () => {
+    dispatch(updateDefaultSubreddit("r/pics/"));
   };
 
   return (

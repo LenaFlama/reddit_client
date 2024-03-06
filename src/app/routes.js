@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "../components/feautures/header/home/home";
-import New from "../components/feautures/header/new/new";
-import Popular from "../components/feautures/header/popular/popular";
-import Anime from "../components/feautures/header/categories/anime/anime";
-import Funny from "../components/feautures/header/categories/funny/funny";
-import Movies from "../components/feautures/header/categories/movies/movies";
-import Music from "../components/feautures/header/categories/music/music";
+import Home from "../components/features/header/home/home";
+import New from "../components/features/header/new/new";
+import Popular from "../components/features/header/popular/popular";
+import Anime from "../components/features/header/categories/anime/anime";
+import Funny from "../components/features/header/categories/funny/funny";
+import Movies from "../components/features/header/categories/movies/movies";
+import Music from "../components/features/header/categories/music/music";
 import Layout from "./layout";
-import Games from "../components/feautures/header/categories/games/games";
+import Games from "../components/features/header/categories/games/games";
 
 const AppRoutes = () => {
   return (

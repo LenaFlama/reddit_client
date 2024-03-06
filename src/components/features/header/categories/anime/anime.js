@@ -6,7 +6,7 @@ export default function Anime () {
   const dispatch = useDispatch();
 
   const handleChangeSubredditToAnime = () => {
-    dispatch(updateDefaultSubreddit("/r/anime"));
+    dispatch(updateDefaultSubreddit("r/anime"));
   };
 
   useEffect(() => {

@@ -3,13 +3,13 @@ import { API_ROOT } from "../../app/api";
 
 export const fetchCards = createAsyncThunk(
   "cards/fetchCards",
-  async ({ subreddit, searchTerm }) => {
+  async ({ subreddit = "r/pics", searchTerm }) => {
     try {
       let url;
       if (searchTerm) {
-        url = await fetch(`${API_ROOT}${subreddit}.json?q=${searchTerm}`);
+        url = await fetch(`${API_ROOT}/${subreddit}.json?q=${searchTerm}`);
       } else {
-        url = await fetch(`${API_ROOT}${subreddit}.json`);
+        url = await fetch(`${API_ROOT}/${subreddit}.json`);
       }
       let data = await url.json();
       const cards = data.data.children.map((child) => child.data);
@@ -65,5 +65,5 @@ export default cardsSlice.reducer;
 export const selectCards = (state) => state.cards.cards;
 export const selectDefaultSubreddit = (state) => state.cards.defaultSubreddit;
 export const selectSearchTerm = (state) => state.cards.searchTerm;
-export const { updateDefaultSubreddit, setSearchTerm, clearSearchTerm } =
+export const { updateDefaultSubreddit, setSearchTerm } =
   cardsSlice.actions;

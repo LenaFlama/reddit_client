@@ -5,7 +5,7 @@ import {
   updateDefaultSubreddit,
 } from "../../../Cards/cardSlice";
 import { useNavigate, createSearchParams } from "react-router-dom";
-import "./search.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Search() {
   const [term, setTerm] = useState("");
@@ -20,7 +20,6 @@ export default function Search() {
       search: searchInputRef.current.value,
     };
     const queryString = createSearchParams(query);
-
     navigate({ search: `?${queryString}` });
   };
 
@@ -29,8 +28,7 @@ export default function Search() {
     if (term.length === 0) {
       return;
     }
-
-    dispatch(updateDefaultSubreddit("/search"));
+    dispatch(updateDefaultSubreddit("search"));
     dispatch(setSearchTerm(term));
   };
   const handleKeyDown = (e) => {
@@ -39,27 +37,29 @@ export default function Search() {
     }
   };
   return (
-    <div className='search'>
+    <form className='container-fluid d-flex ps-0 search' onSubmit={handleSearch}>
       <input
+        className='form-control me-2'
         type='search'
         value={term}
         placeholder='Search'
         ref={searchInputRef}
         onChange={search}
+        aria-label='Search'
         onKeyDown={handleKeyDown}
       ></input>
-      <details className='search-sign'>
-        <summary className='material-symbols-outlined search'>Search</summary>
-        <input
-          className='option-box-search'
-          type='search'
-          value={term}
-          placeholder='Search'
-          ref={searchInputRef}
-          onChange={search}
-          onKeyDown={handleKeyDown}
-        ></input>
-      </details>
-    </div>
+      <button className='btn btn-outline-light search' type='submit'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='16'
+          height='16'
+          fill='currentColor'
+          className='bi bi-search'
+          viewBox='0 0 16 16'
+        >
+          <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0' />
+        </svg>
+      </button>
+    </form>
   );
 }

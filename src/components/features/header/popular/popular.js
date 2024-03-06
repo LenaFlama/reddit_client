@@ -11,7 +11,7 @@ export default function Popular() {
   });
 
   const handleChangeSubredditToPopular = () => {
-    dispatch(updateDefaultSubreddit("/r/popular/"));
+    dispatch(updateDefaultSubreddit("r/popular/"));
   };
 
   return (

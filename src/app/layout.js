@@ -1,14 +1,12 @@
-import Header from "../components/feautures/header/header";
+import Header from "../components/features/header/header";
 import Cards from "../components/Cards/cards";
-import './layout.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = () => {
   return (
-    <div className='body'>
-      <div className="header">
+    <div className='container-fluid bg-light w-75 mt-2 bg-dark rounded-2'>
+      <div className='row '>
         <Header></Header>
-      </div>
-      <div className="main">
         <Cards></Cards>
       </div>
     </div>

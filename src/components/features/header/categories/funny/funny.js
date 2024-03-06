@@ -2,16 +2,17 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
 
-export default function Movies () {
+export default function Funny () {
   const dispatch = useDispatch();
-
-  const handleChangeSubredditToMovies = () => {
-    dispatch(updateDefaultSubreddit("/r/movies"));
+  
+  const handleChangeSubredditToFunny = () => {
+    dispatch(updateDefaultSubreddit("r/funny"));
   };
 
   useEffect(() => {
-    handleChangeSubredditToMovies();
+    handleChangeSubredditToFunny();
   });
+
   return(
     <div></div>
   )
