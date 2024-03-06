@@ -36,7 +36,7 @@ export default function Comments() {
     return (
       <div>
         {replies.map((reply, index) => (
-          <div className='d-flex  border-start flex-column ms-2 ps-1'>
+          <div className='d-flex border-start flex-column ms-2 ps-1'>
             <div className='d-flex justify-content-between mx-3'>
               <span>{reply.data.author} </span>
               <div className='d-flex align-items-center'>

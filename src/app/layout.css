@@ -1,0 +1,5 @@
+@media (min-width: 1450px) {
+  .custom-width {
+    width: 75%;
+  }
+}

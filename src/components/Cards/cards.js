@@ -6,7 +6,6 @@ import {
   selectDefaultSubreddit,
   selectSearchTerm,
 } from "./cardSlice";
-//import "./cards.css";
 import { fetchComments } from "../features/bar/comments/commentsSlice";
 import Comments from "../features/bar/comments/comments";
 import Vote from "../features/bar/vote/vote";
@@ -44,7 +43,7 @@ export default function Cards() {
   };
 
   return (
-    <div className='card col container-fluid p-4 bg-dark border-0'>
+    <div className='card  position-aboslute col-9 container-fluid p-4 m-0 bg-dark border-0 ms-auto'>
       {cards.map((card) => (
         <div className='card mb-3 bg-light' key={card.id}>
           <div className='card-body'>
