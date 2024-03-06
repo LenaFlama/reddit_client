@@ -3,7 +3,7 @@ import { API_ROOT } from "../../app/api";
 
 export const fetchCards = createAsyncThunk(
   "cards/fetchCards",
-  async ({ subreddit = "r/pics", searchTerm }) => {
+  async ({ subreddit, searchTerm }) => {
     try {
       let url;
       if (searchTerm) {

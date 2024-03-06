@@ -22,8 +22,9 @@ export default function Cards() {
   const [openComments, setOpenComments] = useState({});
 
   useEffect(() => {
+    if (defaultSubreddit !== '' || searchTerm !== '') {
     dispatch(fetchCards({ subreddit: defaultSubreddit, searchTerm }));
-  }, [dispatch, defaultSubreddit, searchTerm]);
+  }}, [dispatch, defaultSubreddit, searchTerm]);
 
   useEffect(() => {
     // Fetch comments when openComments changes
