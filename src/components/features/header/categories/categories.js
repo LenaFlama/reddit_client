@@ -8,27 +8,27 @@ export default function Categories() {
         <p className="text-light fs-1 ">Categories:</p>
         <ul className="nav flex-column">
           <li className='nav-item'>
-            <NavLink className='nav-link text-light' to='/categories/games'>
+            <NavLink className='nav-link text-light' aria-label='Games' to='/categories/games'>
               Games
             </NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink className='nav-link text-light' to='/categories/anime'>
+            <NavLink className='nav-link text-light' aria-label='Anime' to='/categories/anime'>
               Anime
             </NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink className='nav-link text-light' to='/categories/funny'>
+            <NavLink className='nav-link text-light' aria-label='Funny' to='/categories/funny'>
               Funny
             </NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink className='nav-link text-light' to='/categories/movies'>
+            <NavLink className='nav-link text-light' aria-label='Movies' to='/categories/movies'>
               Movies
             </NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink className='nav-link text-light' to='/categories/music'>
+            <NavLink className='nav-link text-light' aria-label='Music' to='/categories/music'>
               Music
             </NavLink>
           </li>

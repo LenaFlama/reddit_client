@@ -37,7 +37,7 @@ export default function Search() {
     }
   };
   return (
-    <form className='container-fluid d-flex ps-0 search' onSubmit={handleSearch}>
+    <form className='container-fluid d-flex ps-0' id='search' onSubmit={handleSearch}>
       <input
         className='form-control me-2'
         type='search'
@@ -48,7 +48,7 @@ export default function Search() {
         aria-label='Search'
         onKeyDown={handleKeyDown}
       ></input>
-      <button className='btn btn-outline-light search' type='submit'>
+      <button className='btn btn-outline-light' aria-label='submit' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='16'

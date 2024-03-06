@@ -7,11 +7,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header() {
   return (
-    <div className='col col-3 container-fluid'>
-      <nav className='navbar col navbar-dark p-3 w-15 h-100 custom-fix'>
-        <ul className='nav nav-pills flex-column mb-auto'>
-          <li className='nav-item m-2'>
-            <NavLink className='nav-link text-light ps-0 ' to='/home'>
+    <div className='col col-3 container-fluid text-danger'>
+      <nav className='navbar col navbar-dark p-3 w-15 h-100 custom-fix data-bs-theme="dark'>
+        <ul className='nav nav-pills flex-column mb-auto text-danger'>
+          <li className='nav-item m-2 text-danger'>
+            <NavLink className='nav-link text-light ps-0 home' aria-label='Home' to='/home'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='50'
@@ -27,8 +27,8 @@ export default function Header() {
           <li className='nav-item mt-2'>
             <Search />
           </li>
-          <li className='nav-item m-0 ps-0'>
-            <NavLink className='nav-link fs-2 text-light ps-0' to='/new'>
+          <li className='nav-item mt-1 ps-0'>
+            <NavLink className='nav-link fs-2 text-light ps-0' aria-label='New' to='/new'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='30'
@@ -44,7 +44,7 @@ export default function Header() {
             </NavLink>
           </li>
           <li className='nav-item m-0'>
-            <NavLink className='nav-link fs-2 text-light ps-0' to='/popular'>
+            <NavLink className='nav-link fs-2 text-light ps-0' aria-label='Popular' to='/popular'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='30'
