@@ -10,7 +10,6 @@ import { fetchComments } from "../features/bar/comments/commentsSlice";
 import Comments from "../features/bar/comments/comments";
 import Vote from "../features/bar/vote/vote";
 import Markdown from "react-markdown";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Cards() {
   const cards = useSelector(selectCards);
@@ -43,10 +42,10 @@ export default function Cards() {
   };
 
   return (
-    <div className='card  position-aboslute col-9 container-fluid p-4 m-0 bg-dark border-0 ms-auto'>
+    <div className='container-fluid d-flex flex-column card col-md-9 col-11 p-xxl-4 p-1 pt-3 m-0 bg-dark border-0 justify-content-end'>
       {cards.map((card) => (
-        <div className='card mb-3 bg-light' key={card.id}>
-          <div className='card-body'>
+        <div className='container-fluid card mb-sm-3 mb-1 bg-light p-0' key={card.id}>
+          <div className='card-body p-sm-3 p-1'>
             <h3>{card.title}</h3>
             <h6 className='card-subtitle'>
               <p className='my-0'>{card.author}</p>
@@ -83,7 +82,7 @@ export default function Cards() {
             ) : (
               !card.post_hint
             )}
-            <div className='d-flex my-3 pb-2 border-bottom align-items-center'>
+            <div className='container-fluid d-flex my-3 pb-2 border-bottom align-items-center'>
               <Vote></Vote>
               <div className='d-flex align-items-center'>
                 <svg

@@ -11,9 +11,10 @@ CSS;
 JavaScript;
 Build the application using React and Redux;
 Version control the application with Git and host the repository on GitHub;
+Bootstrap 5;
 
 Features:
-Users can access your application at a URL;
+Users can access my application at a URL;
 Users can use the application on any modern browser;
 Users can use the application on any device (desktop to mobile);
 Users are shown a detailed view (modal or new page/route) when they select an item;
@@ -23,5 +24,5 @@ Users see an initial view of the data when first visiting the app;
 
 Future work:
 
-Write unit tests for your components using Jest/Enzyme;
+Write unit tests for my components using Jest/Enzyme;
 Implement the reddit pagination system

@@ -29,7 +29,7 @@ export default function Vote() {
     }
   };
   return (
-    <div className="container d-flex ps-0 ms-0">
+    <div className="container-fluid d-flex ps-0 ms-0">
       <span
         className={`material-symbols-outlined thumb ${greenColor} `}
         onClick={handleChangingColorGreen}

@@ -37,9 +37,9 @@ export default function Search() {
     }
   };
   return (
-    <form className='container-fluid d-flex p-0' id='search' onSubmit={handleSearch}>
+    <form className='container-fluid d-flex p-2' id='search' onSubmit={handleSearch}>
       <input
-        className='form-control'
+        className='form-control p-2 me-2 d-flex'
         type='search'
         value={term}
         placeholder='Search'
@@ -47,14 +47,15 @@ export default function Search() {
         onChange={search}
         aria-label='Search'
         onKeyDown={handleKeyDown}
+        name='Search'
       ></input>
-      <button className='btn btn-outline-light ms-2 d-none d-xl-block' aria-label='submit' type='submit'>
+      <button className='btn btn-outline-light ' aria-label='submit' type='submit'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          width='16'
-          height='16'
+          width='20'
+          height='20'
           fill='currentColor'
-          className='bi bi-search '
+          className='bi bi-search'
           viewBox='0 0 16 16'
         >
           <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0' />

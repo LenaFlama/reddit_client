@@ -1,12 +1,11 @@
-import Header from "../components/features/header/header";
+import Header from "../components/Cards/header";
 import Cards from "../components/Cards/cards";
-import "bootstrap/dist/css/bootstrap.min.css";
-import './layout.css'
+import "./layout.css";
 
 const Layout = () => {
   return (
-    <div className='container-fluid d-flex custom-width bg-dark rounded-2'>
-      <div className='d-flex flex-row position-relative'>
+    <div className='container-fluid d-grid custom-width bg-dark p-0 rounded-2 '>
+      <div className='d-flex flex-row justify-content-even'>
         <Header></Header>
         <Cards></Cards>
       </div>
