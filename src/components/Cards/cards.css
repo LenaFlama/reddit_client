@@ -1,0 +1,15 @@
+@media only screen and (max-width: 425px) {
+  .custom-font-title {
+    font-size: 1rem!important; 
+  }
+  .custom-font-subtitle {
+    font-size: .7rem!important; 
+  }
+  .custom-font-author {
+    font-size: .8rem!important; 
+  }
+  .custom-hw {
+    height: .8rem;
+    width: .8rem;
+  }
+}

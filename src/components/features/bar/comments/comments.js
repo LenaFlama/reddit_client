@@ -47,7 +47,7 @@ export default function Comments() {
             
             <div className='bg-light bg-gradient rounded pe-0 ms-3 text-wrap'>
               <Markdown
-                className='p-2 text-dark'
+                className='p-2 text-dark custom-font-subtitle pb-sm-2 pb-0' 
                 children={reply.data.body}
               ></Markdown>
             </div>
@@ -69,8 +69,8 @@ export default function Comments() {
     <div className='container-fluid d-flex border rounded-2 flex-column bg-dark text-light'>
       {comments.map((comment) => (
         <div className='border rounded mx-1 my-2 p-2'>
-          <div className='d-flex justify-content-between mb-2'>
-            <span>{comment.author} </span>
+          <div className='d-flex justify-content-between mb-sm-2'>
+            <span className="custom-font-author">{comment.author} </span>
             <div className='d-flex align-items-center'>
               {tsunamiIcon}
               <span>{comment.score}</span>
@@ -78,7 +78,7 @@ export default function Comments() {
           </div>
           <div className='bg-secondary bg-light rounded '>
             <Markdown
-              className='p-2 text-dark'
+              className='p-2 text-dark custom-font-subtitle pb-sm-2 pb-1'
               children={comment.body}
             ></Markdown>
           </div>

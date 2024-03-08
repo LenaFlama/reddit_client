@@ -1,4 +1,4 @@
-import Header from "../components/Cards/header";
+import Header from "../components/header";
 import Cards from "../components/Cards/cards";
 import "./layout.css";
 

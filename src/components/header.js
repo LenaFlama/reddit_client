@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
-import Search from "../features/header/search/search";
-import Categories from "../features/header/categories/categories";
+import Search from "./features/header/search/search";
+import Categories from "./features/header/categories/categories";
 import { Outlet, NavLink } from "react-router-dom";
 import { Offcanvas, Tooltip } from "bootstrap";
 
