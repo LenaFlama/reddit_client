@@ -1,6 +1,6 @@
-​​Build My Own Reddit App
+Build My Own Reddit App
 
-Site link: alternareddit.netlify.app
+Site link: <alternareddit.netlify.app>
 
 For this project I built an application using Reddit API. I used both APIs, the official one(https://www.reddit.com/dev/api/) and the undocumented JSON API(https://github.com/reddit-archive/reddit/wiki/JSON) for inspiration but mostly the JSON API because it doesn’t require an OAuth workflow. 
 
