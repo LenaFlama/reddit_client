@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import Search from "../features/header/search/search";
 import Categories from "../features/header/categories/categories";
@@ -13,10 +14,12 @@ export default function Header() {
       return new Offcanvas(offcanvasEl);
     });
 
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new Tooltip(tooltipTriggerEl)
-})
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new Tooltip(tooltipTriggerEl);
+    });
   });
 
   let navBar = (
@@ -103,39 +106,48 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
           data-bs-target='#offcanvasScrolling'
           aria-controls='offcanvasScrolling'
         >
-          <span className="m-0 p-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Menu">
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='16'
-            height='16'
-            fill='currentColor'
-            className='bi bi-list h-100'
-            viewBox='0 0 16 16'
+          <span
+            className='m-0 p-0'
+            data-bs-toggle='tooltip'
+            data-bs-placement='right'
+            title='Menu'
           >
-            <path
-              fillRule='evenodd'
-              d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
-            />
-          </svg></span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              fill='currentColor'
+              className='bi bi-list h-100'
+              viewBox='0 0 16 16'
+            >
+              <path
+                fillRule='evenodd'
+                d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
+              />
+            </svg>
+          </span>
         </button>
         <nav
           className='offcanvas text-bg-dark offcanvas-start navbar container-fluid d-grid col-2 navbar-dark p-3 pt-0 nav-pills m-0 navbar-expand-sm align-items-start justify-content-start'
           data-bs-scroll='true'
-          data-bs-backdrop="false"
+          data-bs-backdrop='false'
           tabIndex='-1'
           id='offcanvasScrolling'
           aria-labelledby='offcanvasScrollingLabel'
         >
           <div className='d-flex p-0 position-sticky top-0 pt-4'>
-          {navBar}
-          <button type="button" className="btn-close btn-close-white ms-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            {navBar}
+            <button
+              type='button'
+              className='btn-close btn-close-white ms-2'
+              data-bs-dismiss='offcanvas'
+              aria-label='Close'
+            ></button>
           </div>
         </nav>
       </div>
       <nav className='d-none navbar container-fluid d-md-grid col-3 navbar-dark p-3 pt-0 nav-pills m-0 navbar-expand-sm align-items-start justify-content-start'>
-        <div className='p-0 position-sticky top-0 pt-4'>
-          {navBar}
-        </div>
+        <div className='p-0 position-sticky top-0 pt-4'>{navBar}</div>
       </nav>
     </div>
   );
