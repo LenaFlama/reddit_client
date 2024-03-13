@@ -10,6 +10,7 @@ For this project, I built an application using the Reddit API. I utilized both A
 - CSS
 - JavaScript
 - Built the application using React and Redux
+- React-infinite-scroll-component(React component library)
 - Version controlled the application with Git and hosted the repository on GitHub
 - Bootstrap 5
 
@@ -22,6 +23,7 @@ For this project, I built an application using the Reddit API. I utilized both A
 - Users can filter the data based on predefined categories
 - Users can search the data using terms
 - Users see an initial view of the data when first visiting the app
+- Users can use infinite scroll as a pagination method
 
 ## Future work:
 
