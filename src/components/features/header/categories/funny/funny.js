@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
+import { updateDefaultSubreddit } from "../../../../Cards/cardsSlice";
 
-export default function Funny () {
+export default function Funny() {
   const dispatch = useDispatch();
-  
   const handleChangeSubredditToFunny = () => {
     dispatch(updateDefaultSubreddit("r/funny"));
   };
@@ -13,7 +12,5 @@ export default function Funny () {
     handleChangeSubredditToFunny();
   });
 
-  return(
-    <div></div>
-  )
+  return <div></div>;
 }

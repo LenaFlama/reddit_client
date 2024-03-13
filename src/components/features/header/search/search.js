@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   setSearchTerm,
   updateDefaultSubreddit,
-} from "../../../Cards/cardSlice";
+} from "../../../Cards/cardsSlice";
 import { useNavigate, createSearchParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -30,6 +30,7 @@ export default function Search() {
     }
     dispatch(updateDefaultSubreddit("search"));
     dispatch(setSearchTerm(term));
+    setTerm('')
   };
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -37,7 +38,11 @@ export default function Search() {
     }
   };
   return (
-    <form className='container-fluid d-flex p-2' id='search' onSubmit={handleSearch}>
+    <form
+      className='container-fluid d-flex p-2'
+      id='search'
+      onSubmit={handleSearch}
+    >
       <input
         className='form-control p-2 me-2 d-flex'
         type='search'
@@ -49,7 +54,11 @@ export default function Search() {
         onKeyDown={handleKeyDown}
         name='Search'
       ></input>
-      <button className='btn btn-outline-light ' aria-label='submit' type='submit'>
+      <button
+        className='btn btn-outline-light '
+        aria-label='submit'
+        type='submit'
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='20'

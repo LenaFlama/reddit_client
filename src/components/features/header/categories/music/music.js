@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
+import { updateDefaultSubreddit } from "../../../../Cards/cardsSlice";
 
-export default function Music () {
+export default function Music() {
   const dispatch = useDispatch();
-
   const handleChangeSubredditToMusic = () => {
     dispatch(updateDefaultSubreddit("r/metal"));
   };
@@ -13,7 +12,5 @@ export default function Music () {
     handleChangeSubredditToMusic();
   });
 
-  return(
-    <div></div>
-  )
+  return <div></div>;
 }

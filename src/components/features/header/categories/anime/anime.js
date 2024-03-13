@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
+import { updateDefaultSubreddit } from "../../../../Cards/cardsSlice";
 
-export default function Anime () {
+export default function Anime() {
   const dispatch = useDispatch();
 
   const handleChangeSubredditToAnime = () => {
@@ -13,7 +13,5 @@ export default function Anime () {
     handleChangeSubredditToAnime();
   });
 
-  return(
-    <div></div>
-  )
+  return <div></div>;
 }

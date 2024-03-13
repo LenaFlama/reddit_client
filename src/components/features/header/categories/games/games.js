@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateDefaultSubreddit } from "../../../../Cards/cardSlice";
+import { updateDefaultSubreddit } from "../../../../Cards/cardsSlice";
 
-export default function Games () {
+export default function Games() {
   const dispatch = useDispatch();
-
   const handleChangeSubredditToGames = () => {
     dispatch(updateDefaultSubreddit("r/gaming"));
   };
@@ -13,7 +12,5 @@ export default function Games () {
     handleChangeSubredditToGames();
   });
 
-  return(
-    <div></div>
-  )
+  return <div></div>;
 }
