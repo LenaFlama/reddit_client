@@ -6,6 +6,7 @@ import Markdown from "react-markdown";
 export default function Comments() {
   const comments = useSelector(selectComments);
 
+  //have to add more children 
   const tsunamiIcon = (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -35,8 +36,8 @@ export default function Comments() {
   const getReplies = (replies) => {
     return (
       <div>
-        {replies.map((reply, index) => (
-          <div className='d-flex border-start flex-column ms-2 ps-1'>
+        {replies.map((reply) => (
+          <div key={reply.id} className='d-flex border-start flex-column ms-2 ps-1'>
             <div className='d-flex justify-content-between mx-3'>
               <span>{reply.data.author} </span>
               <div className='d-flex align-items-center'>
@@ -51,7 +52,7 @@ export default function Comments() {
                 children={reply.data.body}
               ></Markdown>
             </div>
-            <details key={index}>
+            <details>
               <summary className='list-unstyled ms-3'>
                 {reply.data && reply.data.replies === "" ? "" : moreIcon}
               </summary>
@@ -68,7 +69,7 @@ export default function Comments() {
   return (
     <div className='container-fluid d-flex border rounded-2 flex-column bg-dark text-light'>
       {comments.map((comment) => (
-        <div className='border rounded mx-1 my-2 p-2'>
+        <div key={comment.id} className='border rounded mx-1 my-2 p-2'>
           <div className='d-flex justify-content-between mb-sm-2'>
             <span className="custom-font-author">{comment.author} </span>
             <div className='d-flex align-items-center'>
@@ -82,7 +83,7 @@ export default function Comments() {
               children={comment.body}
             ></Markdown>
           </div>
-          <details key={comment.id}>
+          <details>
             <summary className='list-unstyled'>
               {comment.replies === "" ? "" : moreIcon}
             </summary>

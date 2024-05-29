@@ -65,8 +65,8 @@ export default function Cards() {
         dataLength={cards.length}
         next={fetchAfter}
         hasMore={after !== null}
-        loader={<h4 className='text-primary'>Loading...</h4>}
-        endMessage={<p className='text-primary'>No more items to load</p>}
+        loader={<h4 className='text-light'>Loading...</h4>}
+        endMessage={<p className='text-light'>No more items to load</p>}
       >
         {cards.map((card) => (
           <div
