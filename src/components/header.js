@@ -13,13 +13,6 @@ export default function Header() {
     var offcanvasList = offcanvasElementList.map(function (offcanvasEl) {
       return new Offcanvas(offcanvasEl);
     });
-
-    var tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    );
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new Tooltip(tooltipTriggerEl);
-    });
   });
 
   let navBar = (
@@ -164,35 +157,29 @@ export default function Header() {
   );
 
   return (
-    <div className='d-md-grid container-fluid'>
-      <div className='d-md-none d-grid align-items-start h-100 container-fluid'>
+    <div className='d-md-grid'>
+      <div className='d-md-none d-grid align-items-start h-100'>
         <button
-          className='btn btn-dark p-1 position-sticky top-0'
+          className='btn btn-dark position-sticky top-0 mt-3 p-1 pt-0'
           type='button'
           data-bs-toggle='offcanvas'
           data-bs-target='#offcanvasScrolling'
           aria-controls='offcanvasScrolling'
         >
-          <span
-            className='m-0 p-0'
-            data-bs-toggle='tooltip'
-            data-bs-placement='right'
-            title='Menu'
-          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='16'
-              height='16'
+              width='20'
+              height='20'
               fill='currentColor'
-              className='bi bi-list h-100'
+              className='bi bi-list'
               viewBox='0 0 16 16'
             >
               <path
                 fillRule='evenodd'
                 d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
-              />
+              fill='#FF4500'/>
             </svg>
-          </span>
+
         </button>
         <nav
           className='offcanvas text-bg-dark offcanvas-start navbar container-fluid d-grid navbar-dark p-3 pt-0 nav-pills m-0 navbar-expand-sm align-items-start justify-content-start'
