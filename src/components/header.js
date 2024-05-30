@@ -19,37 +19,38 @@ export default function Header() {
     <ul className='nav d-grid col mb-auto'>
       <li className='nav-item m-0'>
         <NavLink
-          className='nav-link fs-2 text-light p-0 d-flex flex-row align-items-end p-2'
+          className='nav-link fs-3 text-light d-flex flex-row align-items-center p-0 mx-1 ps-1'
           aria-label='Home'
           to='/home'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='40'
-            height='40'
+            width='30'
+            height='30'
             fill='currentColor'
             className='bi bi-house'
             viewBox='0 0 16 16'
           >
-            <path d='M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z'
-            fill='#FF4500' />
+            <path
+              d='M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z'
+              fill='#FF4500'
+            />
           </svg>
-          <div className='d-flex ms-2' style={{color:'#FF4500'}}>Home</div>
+          <div className='d-flex ms-2' style={{ color: "#FF4500" }}>
+            Home
+          </div>
         </NavLink>
       </li>
       <li className='nav-item'>
-        <Search />
-      </li>
-      <li className='nav-item'>
         <NavLink
-          className='nav-link fs-2 text-light p-0 d-flex flex-row align-items-end p-2'
+          className='nav-link fs-3 text-light d-flex flex-row align-items-center p-0 mx-1 ps-1'
           aria-label='New'
           to='/new'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='40'
-            height='40'
+            width='30'
+            height='30'
             fill='currentColor'
             className='bi bi-cup-hot'
             viewBox='0 0 16 16'
@@ -65,14 +66,14 @@ export default function Header() {
       </li>
       <li className='nav-item'>
         <NavLink
-          className='nav-link fs-2 text-light p-0 d-flex flex-row align-items-end p-2'
+          className='nav-link fs-3 text-light d-flex flex-row align-items-center p-0 mx-1 ps-1'
           aria-label='Popular'
           to='/popular'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
-            width='40'
-            height='40'
+            width='30'
+            height='30'
             fill='currentColor'
             className='bi bi-newspaper'
             viewBox='0 0 16 16'
@@ -84,14 +85,44 @@ export default function Header() {
         </NavLink>
       </li>
       <li className='nav-item'>
+        <Search />
+      </li>
+      <li style={{ color: "white" }} className='mt-1'>
+        <hr className='my-2' />
+      </li>
+      <li className='nav-item'>
+        <NavLink
+          className='nav-link fs-4 text-light d-flex flex-row align-items-center p-0 mx-1 ps-1'
+          aria-label=''
+          to=''
+        >
+          <div className='d-flex'>Log In</div>
+        </NavLink>
+      </li>
+      <li className='nav-item'>
+        <NavLink
+          className='nav-link fs-4 text-light d-flex flex-row align-items-center p-0 mx-1 ps-1'
+          aria-label=''
+          to=''
+        >
+          <div className='d-flex'>Sign In</div>
+        </NavLink>
+      </li>
+      <li style={{ color: "white" }} className='mt-1'>
+        <hr className='my-2' />
+      </li>
+      <li className='nav-item'>
         <Categories />
+      </li>
+      <li style={{ color: "white" }} className='mt-1'>
+        <hr className='my-2' />
       </li>
       <Outlet></Outlet>
     </ul>
   );
 
   let bottom = (
-    <div className='d-flex position-sticky align-items-end h-100'>
+    <div className='d-flex position-sticky align-items-end h-100 pt-3 mb-2'>
       <a href='https://www.facebook.com/reddit' aria-label='Facebook'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -166,20 +197,20 @@ export default function Header() {
           data-bs-target='#offcanvasScrolling'
           aria-controls='offcanvasScrolling'
         >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
-              fill='currentColor'
-              className='bi bi-list'
-              viewBox='0 0 16 16'
-            >
-              <path
-                fillRule='evenodd'
-                d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
-              fill='#FF4500'/>
-            </svg>
-
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='20'
+            height='20'
+            fill='currentColor'
+            className='bi bi-list'
+            viewBox='0 0 16 16'
+          >
+            <path
+              fillRule='evenodd'
+              d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5'
+              fill='#FF4500'
+            />
+          </svg>
         </button>
         <nav
           className='offcanvas text-bg-dark offcanvas-start navbar container-fluid d-grid navbar-dark p-3 pt-0 nav-pills m-0 navbar-expand-sm align-items-start justify-content-start'
@@ -194,7 +225,7 @@ export default function Header() {
             {navBar}
             <button
               type='button'
-              className='btn-close btn-close-white ms-2'
+              className='btn-close btn-close-white'
               data-bs-dismiss='offcanvas'
               aria-label='Close'
             ></button>

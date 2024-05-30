@@ -39,12 +39,12 @@ export default function Search() {
   };
   return (
     <form
-      className='container-fluid d-flex p-2'
+      className='container-fluid d-flex ps-2 py-1 align-items-center'
       id='search'
       onSubmit={handleSearch}
     >
       <input
-        className='form-control p-2 me-2 d-flex'
+        className='form-control p-0 ps-2 me-2 d-flex '
         type='search'
         value={term}
         placeholder='Search'
@@ -55,14 +55,14 @@ export default function Search() {
         name='Search'
       ></input>
       <button
-        className='btn btn-outline-light '
+        className='btn btn-outline-light py-0 px-2'
         aria-label='submit'
         type='submit'
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          width='20'
-          height='20'
+          width='10'
+          height='10'
           fill='currentColor'
           className='bi bi-search'
           viewBox='0 0 16 16'
