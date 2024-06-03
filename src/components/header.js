@@ -2,8 +2,9 @@
 import React, { useEffect } from "react";
 import Search from "./features/header/search/search";
 import Categories from "./features/header/categories/categories";
+import LogIn from "../app/logIn";
 import { Outlet, NavLink } from "react-router-dom";
-import { Offcanvas, Tooltip } from "bootstrap";
+import { Offcanvas } from "bootstrap";
 
 export default function Header() {
   useEffect(() => {
@@ -94,7 +95,7 @@ export default function Header() {
         <NavLink
           className='nav-link fs-4 text-light d-flex flex-row align-items-center p-0 mx-1 ps-1'
           aria-label=''
-          to=''
+          to='/LogIn'
         >
           <div className='d-flex'>Log In</div>
         </NavLink>
@@ -105,7 +106,7 @@ export default function Header() {
           aria-label=''
           to=''
         >
-          <div className='d-flex'>Sign In</div>
+          <div className='d-flex'>Sign Up</div>
         </NavLink>
       </li>
       <li style={{ color: "white" }} className='mt-1'>
